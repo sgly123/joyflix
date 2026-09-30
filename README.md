@@ -61,18 +61,18 @@
 </details>
 
 ### 请不要在 B站、小红书、微信公众号、抖音、今日头条或其他中国大陆社交平台发布视频或文章宣传本项目，不授权任何“科技周刊/月刊”类项目或站点收录本项目。
-
+1111
 ---
 
 ## 技术栈
 
-| 分类      | 主要依赖                                                                                              |
-| --------- | ----------------------------------------------------------------------------------------------------- |
-| 前端框架  | [Next.js 14](https://nextjs.org/) · App Router                                                        |
+| 分类      | 主要依赖                                                                                                  |
+| ------- | ----------------------------------------------------------------------------------------------------- |
+| 前端框架    | [Next.js 14](https://nextjs.org/) · App Router                                                        |
 | UI & 样式 | [Tailwind&nbsp;CSS 3](https://tailwindcss.com/)                                                       |
 | 语言      | TypeScript 4                                                                                          |
-| 播放器    | [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) · [HLS.js](https://github.com/video-dev/hls.js/) |
-| 部署      | Docker · Vercel                                                                                |
+| 播放器     | [ArtPlayer](https://github.com/zhw2590582/ArtPlayer) · [HLS.js](https://github.com/video-dev/hls.js/) |
+| 部署      | Docker · Vercel                                                                                       |
 
 ## 部署
 
@@ -80,12 +80,12 @@
 
 存储支持矩阵
 
-|                   | Docker | Vercel | Netlify |
-| :---------------: | :----: | :----: | :-----: |
-|   localstorage    |   ✅   |   ✅   |   ✅    |
-|    原生 redis     |   ✅   |        |         |
-|   Upstash Redis   |      |   ✅   |   ✅    |
-✅：经测试支持
+|               | Docker | Vercel | Netlify |
+|:-------------:|:------:|:------:|:-------:|
+| localstorage  | ✅      | ✅      | ✅       |
+| 原生 redis      | ✅      |        |         |
+| Upstash Redis |        | ✅      | ✅       |
+| ✅：经测试支持       |        |        |         |
 
 除 localstorage 方式外，其他方式都支持多账户、记录同步和管理页面
 
@@ -150,7 +150,6 @@
 3. 返回你的项目，环境变量 **UPSTASH_URL 和 UPSTASH_TOKEN**，值为第二步复制的 endpoint 和 token
 4. 设置环境变量 NEXT_PUBLIC_STORAGE_TYPE，值为 **upstash**；设置 USERNAME 和 PASSWORD 作为超管账号
 
-
 ### Docker 部署
 
 ### Redis 版本（推荐，多账户数据隔离，跨设备同步）
@@ -189,36 +188,33 @@ networks:
     driver: bridge
 ```
 
-
 ## 环境变量
 
-| 变量                                | 说明                                         | 可选值                           | 默认值                                                                                                                     |
-| ----------------------------------- | -------------------------------------------- | -------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| USERNAME                            | 非 localstorage 部署时的管理员账号           | 任意字符串                       | （空）                                                                                                                     |
-| PASSWORD                            | 非 localstorage 部署时为管理员密码           | 任意字符串                       | （空）                                                                                                                     |
-| NEXT_PUBLIC_SITE_NAME               | 站点名称                                     | 任意字符串                       | JoyFlix                                                                                                                     |
-| ANNOUNCEMENT                        | 站点公告                                     | 任意字符串                       | 请勿分享 ʕ •ᴥ•ʔ～ |
-| NEXT_PUBLIC_STORAGE_TYPE            | 播放记录/收藏的存储方式                      | localstorage、redis、d1、upstash | localstorage                                                                                                               |
-| REDIS_URL                           | redis 连接 url                               | 连接 url                         | 空                                                                                                                         |
-| UPSTASH_URL                         | upstash redis 连接 url                       | 连接 url                         | 空                                                                                                                         |
-| UPSTASH_TOKEN                       | upstash redis 连接 token                     | 连接 token                       | 空                                                                                                                         |
-| NEXT_PUBLIC_SEARCH_MAX_PAGE         | 搜索接口可拉取的最大页数                     | 1-50                             | 5                                                                                                                          |
-| NEXT_PUBLIC_DOUBAN_PROXY_TYPE       | 豆瓣数据源请求方式                           | 见下方                           | direct                                                                                                                     |
-| NEXT_PUBLIC_DOUBAN_PROXY            | 自定义豆瓣数据代理 URL                       | url prefix                       | (空)                                                                                                                       |
-| NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE | 豆瓣图片代理类型                             | 见下方                           | direct                                                                                                                     |
-| NEXT_PUBLIC_DOUBAN_IMAGE_PROXY      | 自定义豆瓣图片代理 URL                       | url prefix                       | (空)                                                                                                                       |
-| NEXT_PUBLIC_BASE_URL                | 搜索推荐数据库获取值接口URL                     | https://xxx.com                 | 空    
-                                                                                                
+| 变量                                  | 说明                       | 可选值                           | 默认值          |
+| ----------------------------------- | ------------------------ | ----------------------------- | ------------ |
+| USERNAME                            | 非 localstorage 部署时的管理员账号 | 任意字符串                         | （空）          |
+| PASSWORD                            | 非 localstorage 部署时为管理员密码 | 任意字符串                         | （空）          |
+| NEXT_PUBLIC_SITE_NAME               | 站点名称                     | 任意字符串                         | JoyFlix      |
+| ANNOUNCEMENT                        | 站点公告                     | 任意字符串                         | 请勿分享 ʕ •ᴥ•ʔ～ |
+| NEXT_PUBLIC_STORAGE_TYPE            | 播放记录/收藏的存储方式             | localstorage、redis、d1、upstash | localstorage |
+| REDIS_URL                           | redis 连接 url             | 连接 url                        | 空            |
+| UPSTASH_URL                         | upstash redis 连接 url     | 连接 url                        | 空            |
+| UPSTASH_TOKEN                       | upstash redis 连接 token   | 连接 token                      | 空            |
+| NEXT_PUBLIC_SEARCH_MAX_PAGE         | 搜索接口可拉取的最大页数             | 1-50                          | 5            |
+| NEXT_PUBLIC_DOUBAN_PROXY_TYPE       | 豆瓣数据源请求方式                | 见下方                           | direct       |
+| NEXT_PUBLIC_DOUBAN_PROXY            | 自定义豆瓣数据代理 URL            | url prefix                    | (空)          |
+| NEXT_PUBLIC_DOUBAN_IMAGE_PROXY_TYPE | 豆瓣图片代理类型                 | 见下方                           | direct       |
+| NEXT_PUBLIC_DOUBAN_IMAGE_PROXY      | 自定义豆瓣图片代理 URL            | url prefix                    | (空)          |
+| NEXT_PUBLIC_BASE_URL                | 搜索推荐数据库获取值接口URL          | https://xxx.com               | 空            |
 
-
-
-                                                                                                 
-                        
 NEXT_PUBLIC_DOUBAN_PROXY_TYPE 选项解释：
 
 - direct: 由服务器直接请求豆瓣源站
+
 - cors-proxy-zwei: 浏览器向 cors proxy 请求豆瓣数据
+
 - cmliussss-cdn-tencent: 浏览器向豆瓣 CDN 请求数据由腾讯云 cdn 提供加速
+
 - cmliussss-cdn-ali: 浏览器向豆瓣 CDN 请求数据，由阿里云 cdn 提供加速
 
 - custom: 用户自定义 proxy，由 NEXT_PUBLIC_DOUBAN_PROXY 定义
@@ -279,11 +275,9 @@ custom_category 支持的自定义分类如下：
 
 支持标准的苹果 CMS V10 API 格式。
 
-
 ## TV 使用
 
 配合 [OrionTV](https://github.com/zimplexing/OrionTV) 在 TV 上使用
-
 
 ## 技术
 
@@ -315,7 +309,6 @@ custom_category 支持的自定义分类如下：
 - 本项目不在中国大陆地区提供服务。如有该项目在向中国大陆地区提供服务，属个人行为。在该地区使用所产生的法律风险及责任，属于用户个人行为，与本项目无关，须自行承担全部责任。特此声明
 - 如因公开分享导致的任何法律问题，用户需自行承担责任
 
-
 ---
 
 ## ⚠️ 免责声明
@@ -335,13 +328,11 @@ JoyFlix 仅作为视频搜索工具，不存储、上传或分发任何视频内
 ---
 
 ## 🌟 Star History
+
 [![Stargazers over time](https://starchart.cc/jeffernn/joyflix.svg?variant=adaptive)](https://starchart.cc/jeffernn/joyflix)
-
-
 
 ---
 
 <p align="center">
   <b>⭐ 如果这个项目对你有帮助，请给个 Star 支持一下！</b>
 </p>
-
